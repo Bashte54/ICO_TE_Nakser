@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/dc0082e9-e15a-4396-aab3-220c1e750cfb)Nakser
+Nakser
 
 Camargo Roldan Hector Miguel - Team Scrum - hectorcamargo62@aragon.unam.mx
 
