@@ -1,10 +1,10 @@
-Nakser
+![image](https://github.com/user-attachments/assets/dc0082e9-e15a-4396-aab3-220c1e750cfb)Nakser
 
 Camargo Roldan Hector Miguel - Team Scrum - hectorcamargo62@aragon.unam.mx
 
 Marcial Martinez Xaili Ximena - Team Scrum - xailimarcial24@aragon.unam.mx
 
-Mares Martinez Moises - Team Scrum - moises.mares.m@gmail.com
+Mares Martinez Moises - Team Scrum - moisesmares910@aragon.unam.mx
 
 Martínez Casasola Sofía - Team Scrum - sofiamartinez86@aragon.unam.mx
 
