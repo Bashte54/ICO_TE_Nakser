@@ -1,210 +1,257 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xaili Marcial - Desarrollador 5 </title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #e2aff5;
-            min-height: 100vh;
-            color: #3d3939;
-        }
-        
-        nav {
-            background-color: #502c4e;
-            overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        nav a {
-            float: left;
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            transition: background-color 0.3s;
-        }
-        
-        nav a:hover {
-            background-color: #67ce78;
-        }
-        
-        .dropdown {
-            float: left;
-            overflow: hidden;
-        }
-        
-        .dropdown .dropbtn {
-            font-size: 16px;
-            border: none;
-            outline: none;
-            color: white;
-            padding: 14px 16px;
-            background-color: inherit;
-            font-family: inherit;
-            margin: 0;
-            cursor: pointer;
-        }
-        
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #d6d1d1;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-        }
-        
-        .dropdown-content a {
-            float: none;
-            color: #392c50;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            text-align: left;
-            transition: background-color 0.2s;
-        }
-        
-        .dropdown-content a:hover {
-            background-color: #e0e0e0;
-        }
-        
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-        
-        .content {
-            background-color: white;
-            padding: 30px;
-            margin: 30px auto;
-            border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            max-width: 800px;
-            line-height: 1.6;
-        }
-        
-        h1 {
-            color: #482c50;
-            border-bottom: 2px solid #af5cab;
-            padding-bottom: 10px;
-            margin-top: 0;
-        }
-        
-        .profile {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-right: 30px;
-            border: 3px solid #473aa8;
-        }
-        
-        .info-section {
-            margin-bottom: 20px;
-        }
-        
-        .info-section h2 {
-            color: #8929b9;
-            margin-bottom: 10px;
-        }
-        
-        .tech-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        
-        .tech-item {
-            background-color: #e3f2fd;
-            padding: 5px 10px;
-            border-radius: 15px;
-            font-size: 14px;
-        }
-        
-        .social-links {
-            margin-top: 20px;
-        }
-        
-        .social-links a {
-            display: inline-block;
-            margin-right: 15px;
-            color: #8245ab;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .social-links a:hover {
-            color: #402c50;
-            text-decoration: underline;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Xaili Marcial - Desarrolladora</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* COLORES BASE */
+    :root {
+      --morado-fondo: #e2aff5;
+      --morado-oscuro: #502c4e;
+      --morado-acento: #8929b9;
+      --morado-borde: #af5cab;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background-color: var(--morado-fondo);
+      color: #3d3939;
+      min-height: 100vh;
+    }
+
+    /* NAVBAR UNIFICADO */
+    nav {
+      background-color: var(--morado-oscuro);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+
+    .nav-links li {
+      position: relative;
+    }
+
+    .nav-links a, .dropbtn {
+      color: white;
+      text-decoration: none;
+      padding: 1rem;
+      display: block;
+      transition: all 0.3s ease;
+    }
+
+    .nav-links a:hover, .dropbtn:hover {
+      background-color: #67ce78;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #d6d1d1;
+      min-width: 200px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: var(--morado-oscuro);
+      padding: 12px 16px;
+      border-bottom: 1px solid #eee;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #e0e0e0;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* CONTENIDO */
+    .content {
+      background-color: white;
+      padding: 30px;
+      margin: 30px auto;
+      border-radius: 8px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      max-width: 800px;
+      line-height: 1.6;
+    }
+
+    h1 {
+      color: #482c50;
+      border-bottom: 2px solid var(--morado-borde);
+      padding-bottom: 10px;
+      margin-top: 0;
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 30px;
+      border: 3px solid #473aa8;
+    }
+
+    .info-section {
+      margin-bottom: 20px;
+    }
+
+    .info-section h2 {
+      color: var(--morado-acento);
+      margin-bottom: 10px;
+    }
+
+    .tech-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tech-item {
+      background-color: #e3f2fd;
+      padding: 5px 10px;
+      border-radius: 15px;
+      font-size: 14px;
+    }
+
+    .social-links {
+      margin-top: 20px;
+    }
+
+    .social-links a {
+      display: inline-block;
+      margin-right: 15px;
+      color: #8245ab;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .social-links a:hover {
+      color: #402c50;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        padding: 1rem;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .dropdown-content {
+        position: static;
+      }
+
+      .profile {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .profile-img {
+        margin-bottom: 20px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <nav>
-        <a href="index.html">Inicio</a>
-        <div class="dropdown">
-            <button class="dropbtn">Desarrolladores</button>
-            <div class="dropdown-content">
-                <a href="Desarrollador1.html">Desarrollador 1</a>
-                <a href="Desarrollador2.html">Desarrollador 2</a>
-                <a href="Desarrollador3.html">Desarrollador 3</a>
-            </div>
-        </div>
-        <a href="PatronesDiseno.html">Patrones de Diseño</a>
-        <a href="Scrum.html">Scrum</a>
-        <a href="TeoriaBasica.html">Teoría Básica</a>
-    </nav>
 
-    <div class="content">
-        <div class="profile">
-                <a href="https://ibb.co/zWnkzZgK"><img src="https://i.ibb.co/zWnkzZgK/Xai.jpg" alt="Foto" class="profile-img"></a>
-            <div>
-                <h1> Xaili Ximena Marcial Martinez</h1>
-                <p>Estudiante de Sexto Semestre de la carrera de Ingeniería en Computación</p>
-            </div>
-        </div>
-        
-        <div class="info-section">
-            <h2>Mis tecnologías favoritas</h2>
-            <div class="tech-list">
-                <span class="tech-item">Java</span>
-                <span class="tech-item">HTML/CSS</span>
-                <span class="tech-item">SQL</span>
-            </div>
-        </div>
-        
-        <div class="info-section">
-            <h2>Semestre</h2>
-            <p>6° Semestre</p>
-        </div>
-        
-        <div class="info-section">
-            <h2>Hobbies</h2>
-            <p>Gusto por la música, los conciertos y bailar.
-                Gozo la forma en la que las personas expresan ideas y sentimientos. 
-                De igual manera pasar el tiempo con las personas que quiero, además de que me suman.
-            </p>
-        </div>
-        
-        <div class="info-section">
-            <h2>Redes Sociales</h2>
-            <div class="social-links">
-                <a href="https://www.facebook.com/xaili.mar" target="_blank">Facebook</a>
-                <a href="https://www.instagram.com/xailim/" target="_blank">Instagram</a>
-                <a href="https://github.com/xaili-xmm" target="_blank">GitHub</a>
-            </div>
-        </div>
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-container">
+      <ul class="nav-links">
+        <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn"><i class="fas fa-users"></i> Desarrolladores <i class="fas fa-chevron-down"></i></a>
+          <div class="dropdown-content">
+            <a href="Desarrollador1.html">Desarrollador 1</a>
+            <a href="Desarrollador2.html">Desarrollador 2</a>
+            <a href="Desarrollador3.html">Desarrollador 3</a>
+            <a href="Desarrollador4.html">Desarrollador 4</a>
+            <a href="Desarrollador5.html">Desarrollador 5</a>
+            <a href="Desarrollador6.html">Desarrollador 6</a>
+            
+          </div>
+        </li>
+        <li><a href="PatronesDiseno.html"><i class="fas fa-shapes"></i> Patrones de Diseño</a></li>
+        <li><a href="Scrum.html"><i class="fas fa-tasks"></i> Scrum</a></li>
+        <li><a href="TeoriaBasica.html"><i class="fas fa-book"></i> Teoría Básica</a></li>
+      </ul>
     </div>
+  </nav>
+
+  <!-- CONTENIDO -->
+  <div class="content">
+    <div class="profile">
+      <img src="https://i.ibb.co/zWnkzZgK/Xai.jpg" alt="Foto" class="profile-img">
+      <div>
+        <h1>Xaili Ximena Marcial Martínez</h1>
+        <p>Estudiante de Sexto Semestre de la carrera de Ingeniería en Computación</p>
+      </div>
+    </div>
+
+    <div class="info-section">
+      <h2>Mis tecnologías favoritas</h2>
+      <div class="tech-list">
+        <span class="tech-item">Java</span>
+        <span class="tech-item">HTML/CSS</span>
+        <span class="tech-item">SQL</span>
+      </div>
+    </div>
+
+    <div class="info-section">
+      <h2>Semestre</h2>
+      <p>6° Semestre</p>
+    </div>
+
+    <div class="info-section">
+      <h2>Hobbies</h2>
+      <p>Gusto por la música, los conciertos y bailar. Gozo la forma en la que las personas expresan ideas y sentimientos. 
+         De igual manera pasar el tiempo con las personas que quiero, además de que me suman.</p>
+    </div>
+
+    <div class="info-section">
+      <h2>Redes Sociales</h2>
+      <div class="social-links">
+        <a href="https://www.facebook.com/xaili.mar" target="_blank">Facebook</a>
+        <a href="https://www.instagram.com/xailim/" target="_blank">Instagram</a>
+        <a href="https://github.com/xaili-xmm" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
