@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teoría Básica IS</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #E6F2FF;
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        nav {
+            background-color: #2c3e50;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        
+        nav a:hover {
+            background-color: #3498db;
+        }
+        
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+        
+        .dropdown .dropbtn {
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+            cursor: pointer;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        
+        .dropdown-content a {
+            float: none;
+            color: #2c3e50;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            transition: background-color 0.2s;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: #e0e0e0;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        .content {
+            background-color: white;
+            padding: 30px;
+            margin: 30px auto;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            max-width: 800px;
+            line-height: 1.6;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        
+        .highlight {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-left: 4px solid #3498db;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Inicio</a>
+        
+        <div class="dropdown">
+            <button class="dropbtn">Desarrolladores</button>
+            <div class="dropdown-content">
+                <a href="Desarrollador1.html">Desarrollador 1</a>
+                <a href="Desarrollador2.html">Desarrollador 2</a>
+                <a href="Desarrollador3.html">Desarrollador 3</a>
+            </div>
+        </div>
+        
+        <a href="PatronesDiseno.html">Patrones de Diseño</a>
+        <a href="Scrum.html">Scrum</a>
+        <a href="TeoriaBasica.html">Teoría Básica</a>
+    </nav>
+
+    <div class="content">
+        <h1>Teoría Básica de Ingeniería de Software</h1>
+        
+        <h2>Concepto de Ingeniería de Software</h2>
+        <p>La Ingeniería de Software es la disciplina que aplica principios, métodos y herramientas para el desarrollo de software de calidad, cumpliendo con los requisitos del cliente y los plazos establecidos. Se enfoca en el desarrollo sistemático, controlado y cuantificable de sistemas software, abarcando no solo la fase de implementación, sino también el análisis de requisitos, diseño, pruebas, mantenimiento y gestión del proyecto.</p>
+        
+        <h2>Ciclo de Vida de Desarrollo de Software</h2>
+        <p>El Ciclo de Vida de Desarrollo de Software (SDLC) es un marco que define las etapas necesarias para construir software de alta calidad de manera eficiente. Las fases principales incluyen:</p>
+        <ul>
+            <li><strong>Recolección de Requisitos:</strong> Determinar qué necesita el cliente</li>
+            <li><strong>Análisis:</strong> Estudiar la viabilidad y planificar el proyecto</li>
+            <li><strong>Diseño:</strong> Crear la arquitectura del sistema</li>
+            <li><strong>Implementación:</strong> Escribir el código</li>
+            <li><strong>Pruebas:</strong> Verificar que el software funciona correctamente</li>
+            <li><strong>Despliegue:</strong> Instalar el software en producción</li>
+            <li><strong>Mantenimiento:</strong> Realizar actualizaciones y correcciones</li>
+        </ul>
+        
+        <p>Existen varios modelos de ciclo de vida como el modelo en cascada, iterativo, en espiral y ágil, cada uno con sus propias características y adecuado para diferentes tipos de proyectos.</p>
+    </div>
+</body>
+</html>
