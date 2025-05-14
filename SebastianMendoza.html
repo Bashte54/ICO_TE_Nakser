@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sebatian Mendoza</title>
+  <style>
+    :root {
+      --primary-color: #2c3e50;
+      --secondary-color: #3498db;
+      --accent-color: #e74c3c;
+      --light-color: #ecf0f1;
+      --dark-color: #2c3e50;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #C9EDE7;
+      min-height: 100vh;
+    }
+
+    /* Estilos del Navbar (copiados de index.html) */
+    nav {
+      background-color: var(--primary-color);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+
+    .nav-links li {
+      position: relative;
+    }
+
+    .nav-links a, .dropbtn {
+      color: white;
+      text-decoration: none;
+      padding: 1rem;
+      display: block;
+      transition: all 0.3s ease;
+    }
+
+    .nav-links a:hover, .dropbtn:hover {
+      background-color: var(--secondary-color);
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 200px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: var(--dark-color);
+      padding: 12px 16px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .dropdown-content a:hover {
+      background-color: var(--light-color);
+      color: var(--secondary-color);
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        padding: 1rem;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .dropdown-content {
+        position: static;
+      }
+    }
+
+    /* Estilos específicos de la página del desarrollador */
+    .content {
+      background-color: white;
+      padding: 40px;
+      margin: 40px auto;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      max-width: 900px;
+      line-height: 1.7;
+    }
+
+    h1 {
+      color: var(--primary-color);
+      border-bottom: 3px solid var(--secondary-color);
+      padding-bottom: 12px;
+      margin-top: 0;
+      font-size: 2.2rem;
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .profile-img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #22BCF0;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .profile-info {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .info-section {
+      margin-bottom: 30px;
+      padding: 20px;
+      background-color: #f8fafc;
+      border-radius: 8px;
+      border-left: 4px solid var(--secondary-color);
+    }
+
+    .info-section h2 {
+      color: var(--secondary-color);
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+    }
+
+    .tech-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .tech-item {
+      background-color: #CAE2F0;
+      color: var(--primary-color);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+
+    .tech-item:hover {
+      background-color: var(--secondary-color);
+      color: #CAE2F0;
+      transform: translateY(-2px);
+    }
+
+    .social-links {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      background-color: #ebf4ff;
+      color: var(--primary-color);
+      text-decoration: none;
+      border-radius: 6px;
+      transition: all 0.3s;
+      font-weight: 500;
+    }
+
+    .social-links a:hover {
+      background-color: var(--secondary-color);
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+    }
+
+    @media (max-width: 768px) {
+      .content {
+        padding: 25px;
+        margin: 20px;
+      }
+
+      .profile {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .profile-img {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<nav>
+  <div class="nav-container">
+    <ul class="nav-links">
+      <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+
+      <li class="dropdown">
+        <a href="#" class="dropbtn"><i class="fas fa-users"></i> Desarrolladores <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown-content">
+          <a href="Desarrollador1.html">Desarrollador 1</a>
+          <a href="Desarrollador2.html">Desarrollador 2</a>
+          <a href="Desarrollador3.html">Desarrollador 3</a>
+          <a href="Desarrollador4.html">Desarrollador 4</a>
+          <a href="Desarrollador5.html">Desarrollador 5</a>
+          <a href="Desarrollador6.html">Desarrollador 6</a>
+          <a href="SebastianMendoza.html">Desarrollador 7</a>
+        </div>
+      </li>
+
+      <li><a href="PatronesDiseno.html"><i class="fas fa-shapes"></i> Patrones de Diseño</a></li>
+      <li><a href="Scrum.html"><i class="fas fa-tasks"></i> Scrum</a></li>
+      <li><a href="TeoriaBasica.html"><i class="fas fa-book"></i> Teoría Básica</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="content">
+  <div class="profile">
+    <img src="img/SebastianMendoza.jpeg" alt="Foto" class="profile-img">
+    <div class="profile-info">
+      <h1>Sebastian Mendoza Rosas</h1>
+      <p>Estudiante de la FES Aragon en la carrera de Ingeniería en Computación</p>
+    </div>
+  </div>
+
+  <div class="info-section">
+    <h2>Información Académica</h2>
+    <p><strong>Semestre:</strong> 6° Semestre</p>
+  </div>
+
+  <div class="info-section">
+    <h2>Mis tecnologías favoritas</h2>
+    <div class="tech-list">
+      <span class="tech-item">Big Data</span>
+      <span class="tech-item">Ciberseguridad</span>
+      <span class="tech-item">Blockchain </span>
+      <span class="tech-item">Cloud Computing</span>
+    </div>
+  </div>
+
+  <div class="info-section">
+    <h2>Lenguajes que más manejo</h2>
+    <div class="tech-list">
+      <span class="tech-item">Java</span>
+      <span class="tech-item">Python</span>
+      <span class="tech-item">SQL </span>
+      <span class="tech-item">PHP</span>
+    </div>
+  </div>
+
+  <div class="info-section">
+    <h2>Hobbies e Intereses</h2>
+    <p>Fanatico de la mayoria de los deportes como Beisbol, F1, Futbol, Basketball, etc, asi como de los coches.
+      A su vez me gusta conocer nuevos lugares, asi como los idiomas y datos historicos.
+      También suelo jugar juegos de mesa y viedeojuegos.
+    </p>
+  </div>
+
+  <div class="info-section">
+    <h2>Redes Sociales y Contacto</h2>
+    <div class="social-links">
+      <a href="https://www.instagram.com/sebasmr1954/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+      <a href="https://github.com/Bashte54" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>
