@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adolfo Leonardo - Desarrollador</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f7fa;
+            min-height: 100vh;
+            color: #2d3748;
+        }
+        
+        nav {
+            background-color: #4a5568;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: center;
+        }
+        
+        nav a {
+            color: white;
+            text-align: center;
+            padding: 18px 22px;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+        
+        nav a:hover {
+            background-color: #667eea;
+            transform: translateY(-2px);
+        }
+        
+        .dropdown {
+            position: relative;
+        }
+        
+        .dropdown .dropbtn {
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 18px 22px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #ffffff;
+            min-width: 180px;
+            box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.15);
+            z-index: 1;
+            border-radius: 0 0 8px 8px;
+            overflow: hidden;
+        }
+        
+        .dropdown-content a {
+            color: #4a5568;
+            padding: 14px 18px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            transition: all 0.2s;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: #ebf4ff;
+            color: #667eea;
+            padding-left: 22px;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        .dropdown:hover .dropbtn {
+            background-color: #667eea;
+            transform: translateY(-2px);
+        }
+        
+        .content {
+            background-color: white;
+            padding: 40px;
+            margin: 40px auto;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            max-width: 900px;
+            line-height: 1.7;
+        }
+        
+        h1 {
+            color: #4a5568;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 12px;
+            margin-top: 0;
+            font-size: 2.2rem;
+        }
+        
+        .profile {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #667eea;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .profile-info {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .info-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #f8fafc;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .info-section h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        
+        .tech-item {
+            background-color: #ebf4ff;
+            color: #4a5568;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        
+        .tech-item:hover {
+            background-color: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .social-links {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            background-color: #ebf4ff;
+            color: #4a5568;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+        
+        .social-links a:hover {
+            background-color: #667eea;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .content {
+                padding: 25px;
+                margin: 20px;
+            }
+            
+            .profile {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .profile-img {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <div class="dropdown">
+            <button class="dropbtn">Desarrolladores</button>
+            <div class="dropdown-content">
+                <a href="Desarrollador1.html">Desarrollador 1</a>
+                <a href="Desarrollador2.html">Desarrollador 2</a>
+                <a href="Desarrollador3.html">Desarrollador 3</a>
+            </div>
+        </div>
+        <a href="PatronesDiseno.html">Patrones de Diseño</a>
+        <a href="Scrum.html">Scrum</a>
+        <a href="TeoriaBasica.html">Teoría Básica</a>
+    </nav>
+
+    <div class="content">
+        <div class="profile">
+            <img src="img/LeoFoto.jpg" alt="Foto" class="profile-img">
+            <div class="profile-info">
+                <h1>Adolfo Leonardo Ortiz Ugalde</h1>
+                <p>Estudiante de Sexto Semestre de la carrera de Ingeniería en Computación</p>
+            </div>
+        </div>
+        
+        <div class="info-section">
+            <h2>Información Académica</h2>
+            <p><strong>Semestre:</strong> 6° Semestre</p>
+            <p><strong>Universidad:</strong> UNAM FES Aragon</p>
+            <p><strong>Promedio:</strong> 8.52</p>
+        </div>
+        
+        <div class="info-section">
+            <h2>Mis tecnologías favoritas</h2>
+            <div class="tech-list">
+                <span class="tech-item">Java</span>
+                <span class="tech-item">Python</span>
+                <span class="tech-item">JavaScript</span>
+                <span class="tech-item">Node.js</span>
+            </div>
+        </div>
+        
+        <div class="info-section">
+            <h2>Hobbies e Intereses</h2>
+            <p>Deporstista de corazon y de nacimiento, todos los deportes me gustann aunque los que practico 
+              son mas enfocados en los de alto rendimiento y de preferencia al aire libre como futbol mericano, natacion, atletismo,
+              ciclismo y estar en el gymn la mayor parte de mi vida.</p>
+            <p>Parte de mis hobies son aprender y poner en practica muchos oficios como la carpinteria, herreria y electricidad que 
+              me ayudan a realizar proyectos personales que me interesan.</p>
+            <p>En mi tiempo libre, hago un poco de fotografia y lectura asi como el aprendizaje de tecnologias nuevas y el uso actual de estas.</p>
+        </div>
+        
+        <div class="info-section">
+            <h2>Redes Sociales y Contacto</h2>
+            <div class="social-links">
+                <a href="https://www.facebook.com/adolf.ortiz.18" target="_blank">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 5px;">
+                        <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
+                    </svg>
+                    Facebook
+                </a>
+                <a href="https://www.instagram.com/spontaneouspic_/" target="_blank">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 5px;">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                    </svg>
+                    Instagram
+                </a>
+                <a href="https://github.com/OrtizAdolfo" target="_blank">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 5px;">
+                        <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                    </svg>
+                    GitHub
+                </a>
+                <a href="adolfoortiz117@aragon.unam.mx" target="_blank">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 5px;">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                    Email
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
