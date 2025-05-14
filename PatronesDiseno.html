@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +13,7 @@
             background-color: #E6F2FF;
             min-height: 100vh;
             color: #333;
+            line-height: 1.6;
         }
         
         nav {
@@ -85,8 +86,7 @@
             margin: 30px auto;
             border-radius: 8px;
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            max-width: 800px;
-            line-height: 1.6;
+            max-width: 1000px;
         }
         
         h1 {
@@ -94,6 +94,7 @@
             border-bottom: 2px solid #3498db;
             padding-bottom: 10px;
             margin-top: 0;
+            text-align: center;
         }
         
         .highlight {
@@ -101,6 +102,72 @@
             padding: 20px;
             border-left: 4px solid #3498db;
             margin: 20px 0;
+        }
+        
+        /* Estilos adicionales para los patrones */
+        .pattern-card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border: 1px solid #e0e0e0;
+        }
+        
+        .pattern-type {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            margin-bottom: 15px;
+        }
+        
+        .example {
+            background: #f8f9fa;
+            border-left: 4px solid #e74c3c;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background: #2980b9;
+        }
+        
+        .diagram {
+            text-align: center;
+            margin: 20px 0;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+        
+        .diagram img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #2c3e50;
+            color: white;
         }
     </style>
 </head>
@@ -121,5 +188,175 @@
         <a href="Scrum.html">Scrum</a>
         <a href="TeoriaBasica.html">Teoría Básica</a>
     </nav>
+
+    <div class="content">
+        <h1>Patrones de Diseño en Ingeniería de Software</h1>
+        
+        <section>
+            <h2>¿Qué son los patrones de diseño?</h2>
+            <p>Los patrones de diseño son soluciones generales y reutilizables para problemas comunes en el diseño de software. Representan las mejores prácticas desarrolladas por programadores experimentados a lo largo del tiempo.</p>
+            <p>No son piezas de código listas para copiar y pegar, sino <strong>conceptos abstractos</strong> que deben adaptarse a cada situación particular. Los patrones de diseño ayudan a:</p>
+            <ul>
+                <li>Acelerar el proceso de desarrollo al proporcionar paradigmas de desarrollo probados</li>
+                <li>Mejorar la comunicación entre desarrolladores mediante un vocabulario común</li>
+                <li>Crear código más mantenible y escalable</li>
+                <li>Evitar problemas sutiles que pueden causar complicaciones mayores</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Categorías principales de patrones</h2>
+            
+            <div class="pattern-card">
+                <span class="pattern-type">Creacionales</span>
+                <h3>Singleton</h3>
+                <p>Asegura que una clase tenga solo una instancia y proporciona un punto de acceso global a ella.</p>
+                <div class="example">
+                    <p><strong>Ejemplo de uso:</strong> Configuración global de una aplicación, conexión a base de datos.</p>
+                    <pre>
+public class Database {
+    private static Database instance;
+    
+    private Database() {}
+    
+    public static Database getInstance() {
+        if (instance == null) {
+            instance = new Database();
+        }
+        return instance;
+    }
+}</pre>
+                </div>
+                <div class="diagram">
+                    <img src="https://refactoring.guru/images/patterns/diagrams/singleton/structure-es.png" alt="Diagrama Singleton">
+                    <p><em>Diagrama de la estructura del patrón Singleton</em></p>
+                </div>
+            </div>
+
+            <div class="pattern-card">
+                <span class="pattern-type">Estructurales</span>
+                <h3>Adapter</h3>
+                <p>Permite que interfaces incompatibles trabajen juntas. Actúa como un puente entre dos interfaces.</p>
+                <div class="example">
+                    <p><strong>Ejemplo de uso:</strong> Integración con APIs externas, compatibilidad con versiones anteriores.</p>
+                    <pre>
+interface MediaPlayer {
+    void play(String audioType, String fileName);
+}
+
+interface AdvancedMediaPlayer {
+    void playVlc(String fileName);
+    void playMp4(String fileName);
+}
+
+class MediaAdapter implements MediaPlayer {
+    AdvancedMediaPlayer advancedMusicPlayer;
+    
+    public MediaAdapter(String audioType) {
+        if(audioType.equalsIgnoreCase("vlc")) {
+            advancedMusicPlayer = new VlcPlayer();
+        } else if(audioType.equalsIgnoreCase("mp4")) {
+            advancedMusicPlayer = new Mp4Player();
+        }
+    }
+    
+    @Override
+    public void play(String audioType, String fileName) {
+        if(audioType.equalsIgnoreCase("vlc")) {
+            advancedMusicPlayer.playVlc(fileName);
+        } else if(audioType.equalsIgnoreCase("mp4")) {
+            advancedMusicPlayer.playMp4(fileName);
+        }
+    }
+}</pre>
+                </div>
+            </div>
+
+            <div class="pattern-card">
+                <span class="pattern-type">Comportamiento</span>
+                <h3>Observer</h3>
+                <p>Define una dependencia de uno-a-muchos entre objetos, de modo que cuando un objeto cambia su estado, todos sus dependientes son notificados y actualizados automáticamente.</p>
+                <div class="example">
+                    <p><strong>Ejemplo de uso:</strong> Sistemas de notificación, actualizaciones en tiempo real.</p>
+                    <pre>
+interface Observer {
+    void update(String message);
+}
+
+class ConcreteObserver implements Observer {
+    private String name;
+    
+    public ConcreteObserver(String name) {
+        this.name = name;
+    }
+    
+    @Override
+    public void update(String message) {
+        System.out.println(name + " recibió el mensaje: " + message);
+    }
+}
+
+class Subject {
+    private List<Observer> observers = new ArrayList<>();
+    private String state;
+    
+    public void addObserver(Observer observer) {
+        observers.add(observer);
+    }
+    
+    public void setState(String state) {
+        this.state = state;
+        notifyAllObservers();
+    }
+    
+    private void notifyAllObservers() {
+        for (Observer observer : observers) {
+            observer.update(state);
+        }
+    }
+}</pre>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Otros patrones importantes</h2>
+            <div class="pattern-card">
+                <h3>Factory Method</h3>
+                <p>Define una interfaz para crear un objeto, pero permite a las subclases decidir qué clase instanciar.</p>
+                <p><strong>Uso típico:</strong> Cuando una clase no puede anticipar el tipo de objetos que debe crear.</p>
+            </div>
+            
+            <div class="pattern-card">
+                <h3>Decorator</h3>
+                <p>Permite añadir funcionalidad a un objeto de forma dinámica sin afectar el comportamiento de otros objetos de la misma clase.</p>
+                <p><strong>Uso típico:</strong> Cuando necesitas extender funcionalidad de forma flexible sin usar herencia.</p>
+            </div>
+            
+            <div class="pattern-card">
+                <h3>Strategy</h3>
+                <p>Define una familia de algoritmos, encapsula cada uno de ellos y los hace intercambiables.</p>
+                <p><strong>Uso típico:</strong> Cuando necesitas variar un algoritmo independientemente de los clientes que lo usan.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>¿Cuándo usar patrones de diseño?</h2>
+            <p>Los patrones de diseño son herramientas poderosas, pero deben usarse con criterio:</p>
+            <ul>
+                <li><strong>No son una solución universal:</strong> No fuerces un patrón donde no es necesario</li>
+                <li><strong>Comprende el problema primero:</strong> Asegúrate de entender bien el problema antes de aplicar un patrón</li>
+                <li><strong>Evita la sobreingeniería:</strong> A veces una solución simple es mejor que un patrón complejo</li>
+                <li><strong>Considera el mantenimiento:</strong> Asegúrate que otros desarrolladores puedan entender tu implementación</li>
+            </ul>
+            <p>Los patrones más utilizados en la industria incluyen Singleton, Factory, Observer, Strategy y Decorator.</p>
+        </section>
+
+        <a href="index.html" class="btn">Volver a la página principal</a>
+    </div>
+
+    <footer>
+        <p>Ingeniería de Software - Patrones de Diseño &copy; 2023</p>
+    </footer>
 </body>
 </html>
